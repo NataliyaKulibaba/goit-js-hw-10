@@ -1,13 +1,11 @@
 {{#each this}}
-<li><img class='flag' src='{{ flags.svg}}' alt='{{name.official}} ' />
-  <h2 class="name">{{name.official}}</h2>
+<li class="country"><img class='flag' src='{{ flags.svg}}' alt= 'flag of {{name.official}} ' />
+  <h2 class="country__name">{{name.official}}</h2>
 </li>
 
-<ul class="details-list">
-  <li class="details"> Capital: {{capital}}</li>
-  <li class="details"> Population: {{population}}</li>
-  
-  <li class="details"> Languages: {{languages}}</li>
- 
+<ul class="details">
+  <li class="details__item"> Capital: <p class="details__text">{{capital}}</p></li>
+  <li class="details__item"> Population: <p class="details__text">{{population}}</p></li>
+  <li class="details__item">Languages: {{#each languages}}<p class="details__text ">{{this}}</p>{{/each}}</li>
 </ul>
 {{/each }}
