@@ -52,14 +52,9 @@ function createMarkup(countries) {
   }
 
   if (countries.length === 1) {
-    // console.log(countries)
-    // const ru = countries.map(({ languages }) => {
-    //   console.log(languages)
-    //   const lang = Object.values(languages)
-    //   console.log(lang)
-    // })
-  
-  
+    // const ru = countries.languages.reduce((acc, language, index) => {return index===0? acc +  language.name: acc +', '+  language.name;  } , '');
+    // console.log(ru);
+ 
 
     let markupDetails = countriesDetailList(countries);
     // markup += markupDetails;

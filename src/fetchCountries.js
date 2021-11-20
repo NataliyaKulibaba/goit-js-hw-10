@@ -4,7 +4,7 @@ export default class NewsApiService {
     
   }
   fetchCountries() {
-    const BASE_URL = 'https://restcountries.com/v2';
+    const BASE_URL = 'https://restcountries.com/v3.1';
     return fetch(`${BASE_URL}/name/${this.searchCountry}?fields=name,capital,population,flags,languages`)
       .then(response => {
         if (!response.ok) {
