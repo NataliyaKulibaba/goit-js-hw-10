@@ -7,6 +7,10 @@ export default class NewsApiService {
     const BASE_URL = 'https://restcountries.com/v2';
     return fetch(`${BASE_URL}/name/${this.searchCountry}?fields=name,capital,population,flags,languages`)
       .then(response => {
+        if (!response.ok) {
+          console.log(response)
+          throw new Error(response.status);
+        }
         return response.json();
       });
   }

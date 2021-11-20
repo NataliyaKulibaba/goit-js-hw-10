@@ -39,35 +39,34 @@ function onFetchError(error) {
 
 function createMarkup(countries) {
   console.log(countries);
-  let markup = countriesList(countries);
-  let markupDetails = countriesDetailList(countries);
+  // let markup = countriesList(countries);;
+  // let markupDetails = countriesDetailList(countries);
   
-
   if (countries.length > 10) {
     return Notify.info('Too many matches found. Please enter a more specific name.')
   }
  
   if (countries.length > 1) {
-  markup
+    let markup = countriesList(countries);
+    return listOfCountriesEl.innerHTML = markup;
   }
 
   if (countries.length === 1) {
-//     const li = [...countries].map(({ flags, name, capital, population, languages }) => {
-//             console.log(...languages.name)
-//             return ` <img src =${ flags}/><h2>${name}</h2>
-//         <ul>
-//           <li> Capital: ${capital}</li>
-//           <li> Population: ${population}</li>
-//           <li> Languages: ${languages.name}</li>
-//         </ul>
-    // ` 
-    // markup += li;
-      
-    // });
-  // 
-   markup += markupDetails;
+    // console.log(countries)
+    // const ru = countries.map(({ languages }) => {
+    //   console.log(languages)
+    //   const lang = Object.values(languages)
+    //   console.log(lang)
+    // })
+  
+  
+
+    let markupDetails = countriesDetailList(countries);
+    // markup += markupDetails;
+      return listOfCountriesEl.innerHTML = markupDetails;
   }
-  return listOfCountriesEl.innerHTML = markup;
+  
+  // return listOfCountriesEl.innerHTML = markup;
   // return listOfCountriesEl.insertAdjacentHTML('beforeend',markup);
   }
 
