@@ -47,8 +47,9 @@ function createMarkup(countries) {
   }
 
   if (countries.length === 1) {
-       let markupDetails = countriesDetailList(countries);
-      return listOfCountriesEl.innerHTML = markupDetails;
+    let markupDetails = countriesDetailList(countries);
+    return listOfCountriesEl.innerHTML = markupDetails;
   }
   }
+  
 
