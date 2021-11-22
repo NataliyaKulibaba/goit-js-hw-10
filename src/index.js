@@ -23,6 +23,11 @@ function searchCountries(evt) {
   newsApiService.name = searchFormEl.value.trim();
   console.log(newsApiService.name);
 
+  if (newsApiService.name === "") {
+    listOfCountriesEl.innerHTML = '';
+    return
+  }
+
   newsApiService.fetchCountries() 
     .then(createMarkup)
     .catch(onFetchError)
@@ -50,6 +55,8 @@ function createMarkup(countries) {
     let markupDetails = countriesDetailList(countries);
     return listOfCountriesEl.innerHTML = markupDetails;
   }
+
+
   }
   
 
